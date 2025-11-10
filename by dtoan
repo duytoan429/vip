@@ -8,27 +8,10 @@ local Window = Dtoan:CreateWindow({
     ToggleUIKeybind = "K",
     DisableDtoanPrompts = false,
     DisableBuildWarnings = false,
-
-    ConfigurationSaving = {
-        Enabled = true,
-        FolderName = nil,
-        FileName = "Dtoan Hub"
-    },
-
-    Discord = {
-        Enabled = false,
-        Invite = "https://discord.gg/9Xhw2AMKw",
-        RememberJoins = true
-    },
-
+    ConfigurationSaving = {Enabled = true, FolderName = nil, FileName = "Dtoan Hub"},
+    Discord = {Enabled = false, Invite = "https://discord.gg/9Xhw2AMKw", RememberJoins = true},
     KeySystem = false,
-    KeySettings = {
-        Title = "Untitled",
-        FileName = "Key",
-        SaveKey = true,
-        GrabKeyFromSite = false,
-        Key = {"Hello"}
-    }
+    KeySettings = {Title = "Untitled", FileName = "Key", SaveKey = true, GrabKeyFromSite = false, Key = {"Hello"}}
 })
 
 local Players = game:GetService("Players")
@@ -37,6 +20,93 @@ local UserInputService = game:GetService("UserInputService")
 local LocalPlayer = Players.LocalPlayer
 local Camera = workspace.CurrentCamera
 
+-- 🌟 ===== TAB BLOX FRUIT (ĐẶT ĐẦU) ===== 🌟
+local BloxFruitTab = Window:CreateTab("Blox Fruit", 4483362458)
+
+-- kiểm tra nếu đang ở Blox Fruits
+if game.PlaceId == 2753915549 then
+
+    -- Các nút hub trong Blox Fruit
+    BloxFruitTab:CreateButton({
+        Name = "Speed Hub",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))()
+        end
+    })
+
+    BloxFruitTab:CreateButton({
+        Name = "Teddy Hub",
+        Callback = function()
+            repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("PlayerGui")
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TEDDYHUB-FREEMIUM"))()
+        end
+    })
+
+    BloxFruitTab:CreateButton({
+        Name = "Kiwi Hub",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/HieuDepTrai-Z/KiwiHubFree/refs/heads/main/KiwiHub.lua"))()
+        end
+    })
+
+    BloxFruitTab:CreateButton({
+        Name = "Doraemon Hub",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua"))()
+        end
+    })
+
+    BloxFruitTab:CreateButton({
+        Name = "Zee Hub",
+        Callback = function()
+            loadstring(game:HttpGet("https://zuwz.me/Ls-Zee-Hub"))()
+        end
+    })
+
+    BloxFruitTab:CreateButton({
+        Name = "Đạt Thg",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/DatThg/refs/heads/main/DatThgV2"))()
+        end
+    })
+
+    BloxFruitTab:CreateButton({
+        Name = "Maru Hub",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/trongdeptraihucscript/MaruHubPremium/refs/heads/main/MaruHubPremium.lua"))()
+        end
+    })
+
+    BloxFruitTab:CreateButton({
+        Name = "W Azure",
+        Callback = function()
+            loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/85e904ae1ff30824c1aa007fc7324f8f.lua"))()
+        end
+    })
+
+    BloxFruitTab:CreateButton({
+        Name = "Quantum Hub",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
+        end
+    })
+
+    BloxFruitTab:CreateButton({
+        Name = "Astral Hub",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Overgustx2/Main/refs/heads/main/BloxFruits_25.html"))()
+        end
+    })
+else
+    -- Nếu không trong Blox Fruits thì hiện nút thông báo
+    BloxFruitTab:CreateButton({
+        Name = "Not in Blox Fruits (click to show placeId)",
+        Callback = function()
+            print("Current PlaceId:", game.PlaceId)
+        end
+    })
+end
+
 -- ===== Variables =====
 -- Aim bot
 local aimEnabled = false
@@ -44,11 +114,11 @@ local fovRadius = 120
 local aimSmooth = 0.35
 local MIN_FOV, MAX_FOV = 20, 1000
 local MIN_SMOOTH, MAX_SMOOTH = 0.01, 1
-local wallCheckEnabled = true -- Toggle riêng cho Wall Check
+local wallCheckEnabled = true
 local whitelist = {workspace.Terrain}
 
 -- ESP
-local espEnabled = false  -- mặc định tắt
+local espEnabled = false
 _G.FriendColor = Color3.fromRGB(0,0,255)
 _G.EnemyColor = Color3.fromRGB(255,0,0)
 _G.UseTeamColor = true
@@ -78,7 +148,6 @@ local function updateFOVVisual()
 end
 updateFOVVisual()
 
--- Rainbow stroke
 local hue = 0
 RunService.RenderStepped:Connect(function(dt)
     hue = (hue + dt*0.2) % 1
@@ -108,10 +177,10 @@ local function applyESP(player)
     end
 end
 
--- ===== Aim bot Wall Check Function =====
+-- ===== Aim bot Wall Check =====
 local function isVisible(part)
     if not part or not part.Parent then return false end
-    if not wallCheckEnabled then return true end -- nếu tắt Wall Check thì luôn true
+    if not wallCheckEnabled then return true end
     local origin = Camera.CFrame.Position
     local direction = part.Position - origin
     local rayParams = RaycastParams.new()
@@ -126,7 +195,6 @@ end
 
 -- ===== Update Loop =====
 RunService.RenderStepped:Connect(function()
-    -- ESP update
     for _, player in pairs(Players:GetPlayers()) do
         if player ~= LocalPlayer then
             if espEnabled then
@@ -137,13 +205,140 @@ RunService.RenderStepped:Connect(function()
         end
     end
 
-    -- Aim bot
     if aimEnabled then
         local center = Vector2.new(Camera.ViewportSize.X/2, Camera.ViewportSize.Y/2)
         local bestPart, bestDist = nil, math.huge
-
         for _, player in pairs(Players:GetPlayers()) do
-            if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("Head") and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health>0 then
+            if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("Head") and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health > 0 then
+                local head = player.Character.Head
+                local screenPos, onScreen = Camera:WorldToViewportPoint(head.Position)
+                local d = (Vector2.new(screenPos.X, screenPos.Y) - center).Magnitude
+                if onScreen and d <= fovRadius and d < bestDist and isVisible(head) then
+                    bestDist = d
+                    bestPart = head
+                end
+            end
+        end
+        if bestPart then
+            Camera.CFrame = Camera.CFrame:Lerp(CFrame.new(Camera.CFrame.Position, bestPart.Position), aimSmooth)
+        end
+    end
+end)
+
+-- ===== Aim bot Tab =====
+local AimTab = Window:CreateTab("Aim bot", 4483362458)
+AimTab:CreateToggle({Name = "Aimbot", CurrentValue = aimEnabled, Callback = function(Value) aimEnabled = Value fovFrame.Visible = Value end})
+AimTab:CreateToggle({Name = "Wall Check", CurrentValue = wallCheckEnabled, Callback = function(Value) wallCheckEnabled = Value end})
+AimTab:CreateButton({Name = "Reset Defaults", Callback = function() aimEnabled = false fovRadius = 120 aimSmooth = 0.35 wallCheckEnabled = true fovFrame.Visible = false updateFOVVisual() end})
+AimTab:CreateSlider({Name = "FOV (pixels)", Range = {MIN_FOV, MAX_FOV}, Increment = 10, CurrentValue = fovRadius, Callback = function(Value) fovRadius = Value updateFOVVisual() end})
+AimTab:CreateSlider({Name = "Aim Smooth", Range = {MIN_SMOOTH, MAX_SMOOTH}, Increment = 0.01, CurrentValue = aimSmooth, Callback = function(Value) aimSmooth = Value end})
+
+-- ===== ESP Tab =====
+local ESPTab = Window:CreateTab("ESP", 4483362458)
+ESPTab:CreateToggle({Name = "Enable ESP", CurrentValue = espEnabled, Callback = function(Value) espEnabled = Value end})
+ESPTab:CreateColorPicker({Name = "Friend Color", Color = _G.FriendColor, Callback = function(Value) _G.FriendColor = Value end})
+ESPTab:CreateColorPicker({Name = "Enemy Color", Color = _G.EnemyColor, Callback = function(Value) _G.EnemyColor = Value end})
+ESPTab:CreateToggle({Name = "Use Team Color", CurrentValue = _G.UseTeamColor, Callback = function(Value) _G.UseTeamColor = Value end})
+
+-- ===== Khác Tab =====
+local OtherTab = Window:CreateTab("Khác", 4483362458)
+local InfiniteJumpEnabled = false
+OtherTab:CreateToggle({Name = "Infinity Jump", CurrentValue = false, Callback = function(Value) InfiniteJumpEnabled = Value end})
+UserInputService.JumpRequest:Connect(function()
+    if InfiniteJumpEnabled and LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+        LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+    end
+end)
+
+OtherTab:CreateSlider({Name = "Player Speed", Range = {16,200}, Increment = 5, CurrentValue = 16, Callback = function(Value)
+    if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+        LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = Value
+    end
+end})
+
+local noclipEnabled = false
+local noclipConnection
+OtherTab:CreateToggle({Name = "Noclip (xuyên vật thể)", CurrentValue = false, Callback = function(Value)
+    noclipEnabled = Value
+    if noclipEnabled then
+        noclipConnection = RunService.Stepped:Connect(function()
+            if LocalPlayer.Character then
+                for _, part in pairs(LocalPlayer.Character:GetChildren()) do
+                    if part:IsA("BasePart") then part.CanCollide = false end
+                end
+            end
+        end)
+    elseif noclipConnection then
+        noclipConnection:Disconnect()
+        noclipConnection = nil
+    end
+end})
+
+OtherTab:CreateToggle({Name = "Fly Gui", CurrentValue = false, Callback = function(Value)
+    if Value then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+    end
+end})
+
+-- ===== Orbit Behind =====
+local orbitEnabled = false
+local distanceBehind = 5
+local bodyPos
+local currentTarget = nil
+
+OtherTab:CreateToggle({Name = "Orbit Behind Player", CurrentValue = false, Callback = function(Value)
+    orbitEnabled = Value
+    local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local rootPart = character:WaitForChild("HumanoidRootPart")
+    if orbitEnabled and not bodyPos then
+        bodyPos = Instance.new("BodyPosition")
+        bodyPos.MaxForce = Vector3.new(1e5,1e5,1e5)
+        bodyPos.D = 10
+        bodyPos.P = 3000
+        bodyPos.Parent = rootPart
+    elseif not orbitEnabled and bodyPos then
+        bodyPos:Destroy()
+        bodyPos = nil
+    end
+end})
+
+OtherTab:CreateSlider({Name = "Orbit Distance", Range = {1,20}, Increment = 1, CurrentValue = distanceBehind, Callback = function(Value)
+    distanceBehind = Value
+end})
+
+local function getClosestAlivePlayer()
+    local closestDist = math.huge
+    local closestPlayer = nil
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") and player.Character.Humanoid.Health > 0 then
+            local dist = (player.Character.HumanoidRootPart.Position - LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+            if dist < closestDist then
+                closestDist = dist
+                closestPlayer = player
+            end
+        end
+    end
+    return closestPlayer
+end
+
+RunService.RenderStepped:Connect(function()
+    if orbitEnabled then
+        local character = LocalPlayer.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then return end
+        if not currentTarget or not currentTarget.Character or not currentTarget.Character:FindFirstChild("HumanoidRootPart") then
+            currentTarget = getClosestAlivePlayer()
+        end
+        if currentTarget and currentTarget.Character and currentTarget.Character:FindFirstChild("HumanoidRootPart") and bodyPos then
+            local targetRoot = currentTarget.Character.HumanoidRootPart
+            local backPos = targetRoot.Position - targetRoot.CFrame.LookVector * distanceBehind
+            bodyPos.Position = backPos
+        end
+    end
+end)
+
+-- ===== Init =====
+fovFrame.Visible = aimEnabled
+updateFOVVisual()            if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("Head") and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health>0 then
                 local head = player.Character.Head
                 local screenPos, onScreen = Camera:WorldToViewportPoint(head.Position)
                 local d = (Vector2.new(screenPos.X, screenPos.Y) - center).Magnitude
