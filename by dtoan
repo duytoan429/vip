@@ -45,9 +45,31 @@ CrossoverTab:CreateButton({Name = "Goomba Hub (Arise Crossover)", Callback = fun
 end})
 
 local BrainrotTab = Window:CreateTab("Steal a Brainrot", 4483362458)
-BrainrotTab:CreateButton({Name = "Brainrot Hub", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/duytoan429/BrainrotHub/main/StealABrainrot.lua"))()
-end})
+-- AddButton cho các hub mới
+local function AddButton(tab, data)
+    tab:CreateButton({Name = data.Name, Callback = data.Callback})
+end
+
+AddButton(BrainrotTab, {
+    Name = "Kurd hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Ninja10908/S4/refs/heads/main/Kurdhub"))()
+    end
+})
+
+AddButton(BrainrotTab, {
+    Name = "Lemon hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastefy.app/MJw2J4T6/raw"))()
+    end
+})
+
+AddButton(BrainrotTab, {
+    Name = "Chilli hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
+    end
+})
 
 local aimEnabled = false
 local fovRadius = 120
