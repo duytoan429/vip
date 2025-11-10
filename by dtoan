@@ -1,4 +1,3 @@
--- ===== Menu Dtoan cơ bản =====
 local Dtoan = loadstring(game:HttpGet('https://raw.githubusercontent.com/duytoan429/Menu/refs/heads/main/sourcebydtoan.lua.txt'))()
 local Window = Dtoan:CreateWindow({
     Name = "Dtoan",
@@ -20,95 +19,36 @@ local UserInputService = game:GetService("UserInputService")
 local LocalPlayer = Players.LocalPlayer
 local Camera = workspace.CurrentCamera
 
--- 🌟 ===== TAB BLOX FRUIT (ĐẶT ĐẦU) ===== 🌟
 local BloxFruitTab = Window:CreateTab("Blox Fruit", 4483362458)
+BloxFruitTab:CreateButton({Name = "Speed Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))() end})
+BloxFruitTab:CreateButton({Name = "Teddy Hub", Callback = function() repeat task.wait() until game:IsLoaded() and game.Players.LocalPlayer:FindFirstChild("PlayerGui") loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TEDDYHUB-FREEMIUM"))() end})
+BloxFruitTab:CreateButton({Name = "Kiwi Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/HieuDepTrai-Z/KiwiHubFree/refs/heads/main/KiwiHub.lua"))() end})
+BloxFruitTab:CreateButton({Name = "Doraemon Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua"))() end})
+BloxFruitTab:CreateButton({Name = "Zee Hub", Callback = function() loadstring(game:HttpGet("https://zuwz.me/Ls-Zee-Hub"))() end})
+BloxFruitTab:CreateButton({Name = "Đạt Thg", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/DatThg/refs/heads/main/DatThgV2"))() end})
+BloxFruitTab:CreateButton({Name = "Maru Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/trongdeptraihucscript/MaruHubPremium/refs/heads/main/MaruHubPremium.lua"))() end})
+BloxFruitTab:CreateButton({Name = "W Azure", Callback = function() loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/85e904ae1ff30824c1aa007fc7324f8f.lua"))() end})
+BloxFruitTab:CreateButton({Name = "Quantum Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))() end})
+BloxFruitTab:CreateButton({Name = "Astral Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Overgustx2/Main/refs/heads/main/BloxFruits_25.html"))() end})
 
--- kiểm tra nếu đang ở Blox Fruits
-if game.PlaceId == 2753915549 then
+local GrowGardenTab = Window:CreateTab("Grow A Garden", 4483362458)
+GrowGardenTab:CreateButton({Name = "Grow Hub", Callback = function() loadstring(game:HttpGet("URL_HUB_GROW_A_GARDEN"))() end})
 
-    -- Các nút hub trong Blox Fruit
-    BloxFruitTab:CreateButton({
-        Name = "Speed Hub",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))()
-        end
-    })
+local ForestTab = Window:CreateTab("99 Night In The Forest", 4483362458)
+ForestTab:CreateButton({Name = "Forest Hub", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/duytoan429/ForestHub/main/99Night.lua"))()
+end})
 
-    BloxFruitTab:CreateButton({
-        Name = "Teddy Hub",
-        Callback = function()
-            repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("PlayerGui")
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TEDDYHUB-FREEMIUM"))()
-        end
-    })
+local CrossoverTab = Window:CreateTab("Crossover", 4483362458)
+CrossoverTab:CreateButton({Name = "Goomba Hub (Arise Crossover)", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/JustLevel/goombahub/main/AriseCrossover.lua"))()
+end})
 
-    BloxFruitTab:CreateButton({
-        Name = "Kiwi Hub",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/HieuDepTrai-Z/KiwiHubFree/refs/heads/main/KiwiHub.lua"))()
-        end
-    })
+local BrainrotTab = Window:CreateTab("Steal a Brainrot", 4483362458)
+BrainrotTab:CreateButton({Name = "Brainrot Hub", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/duytoan429/BrainrotHub/main/StealABrainrot.lua"))()
+end})
 
-    BloxFruitTab:CreateButton({
-        Name = "Doraemon Hub",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua"))()
-        end
-    })
-
-    BloxFruitTab:CreateButton({
-        Name = "Zee Hub",
-        Callback = function()
-            loadstring(game:HttpGet("https://zuwz.me/Ls-Zee-Hub"))()
-        end
-    })
-
-    BloxFruitTab:CreateButton({
-        Name = "Đạt Thg",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/DatThg/refs/heads/main/DatThgV2"))()
-        end
-    })
-
-    BloxFruitTab:CreateButton({
-        Name = "Maru Hub",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/trongdeptraihucscript/MaruHubPremium/refs/heads/main/MaruHubPremium.lua"))()
-        end
-    })
-
-    BloxFruitTab:CreateButton({
-        Name = "W Azure",
-        Callback = function()
-            loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/85e904ae1ff30824c1aa007fc7324f8f.lua"))()
-        end
-    })
-
-    BloxFruitTab:CreateButton({
-        Name = "Quantum Hub",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
-        end
-    })
-
-    BloxFruitTab:CreateButton({
-        Name = "Astral Hub",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Overgustx2/Main/refs/heads/main/BloxFruits_25.html"))()
-        end
-    })
-else
-    -- Nếu không trong Blox Fruits thì hiện nút thông báo
-    BloxFruitTab:CreateButton({
-        Name = "Not in Blox Fruits (click to show placeId)",
-        Callback = function()
-            print("Current PlaceId:", game.PlaceId)
-        end
-    })
-end
-
--- ===== Variables =====
--- Aim bot
 local aimEnabled = false
 local fovRadius = 120
 local aimSmooth = 0.35
@@ -116,14 +56,11 @@ local MIN_FOV, MAX_FOV = 20, 1000
 local MIN_SMOOTH, MAX_SMOOTH = 0.01, 1
 local wallCheckEnabled = true
 local whitelist = {workspace.Terrain}
-
--- ESP
 local espEnabled = false
 _G.FriendColor = Color3.fromRGB(0,0,255)
 _G.EnemyColor = Color3.fromRGB(255,0,0)
 _G.UseTeamColor = true
 
--- ===== FOV Circle =====
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "AimBot_FOVGui"
 screenGui.ResetOnSpawn = false
@@ -154,7 +91,6 @@ RunService.RenderStepped:Connect(function(dt)
     fovStroke.Color = Color3.fromHSV(hue,1,1)
 end)
 
--- ===== ESP Function =====
 local function applyESP(player)
     if not player.Character then return end
     local color
@@ -177,7 +113,6 @@ local function applyESP(player)
     end
 end
 
--- ===== Aim bot Wall Check =====
 local function isVisible(part)
     if not part or not part.Parent then return false end
     if not wallCheckEnabled then return true end
@@ -193,7 +128,6 @@ local function isVisible(part)
     return true
 end
 
--- ===== Update Loop =====
 RunService.RenderStepped:Connect(function()
     for _, player in pairs(Players:GetPlayers()) do
         if player ~= LocalPlayer then
@@ -204,7 +138,6 @@ RunService.RenderStepped:Connect(function()
             end
         end
     end
-
     if aimEnabled then
         local center = Vector2.new(Camera.ViewportSize.X/2, Camera.ViewportSize.Y/2)
         local bestPart, bestDist = nil, math.huge
@@ -225,7 +158,6 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
--- ===== Aim bot Tab =====
 local AimTab = Window:CreateTab("Aim bot", 4483362458)
 AimTab:CreateToggle({Name = "Aimbot", CurrentValue = aimEnabled, Callback = function(Value) aimEnabled = Value fovFrame.Visible = Value end})
 AimTab:CreateToggle({Name = "Wall Check", CurrentValue = wallCheckEnabled, Callback = function(Value) wallCheckEnabled = Value end})
@@ -233,14 +165,12 @@ AimTab:CreateButton({Name = "Reset Defaults", Callback = function() aimEnabled =
 AimTab:CreateSlider({Name = "FOV (pixels)", Range = {MIN_FOV, MAX_FOV}, Increment = 10, CurrentValue = fovRadius, Callback = function(Value) fovRadius = Value updateFOVVisual() end})
 AimTab:CreateSlider({Name = "Aim Smooth", Range = {MIN_SMOOTH, MAX_SMOOTH}, Increment = 0.01, CurrentValue = aimSmooth, Callback = function(Value) aimSmooth = Value end})
 
--- ===== ESP Tab =====
 local ESPTab = Window:CreateTab("ESP", 4483362458)
 ESPTab:CreateToggle({Name = "Enable ESP", CurrentValue = espEnabled, Callback = function(Value) espEnabled = Value end})
 ESPTab:CreateColorPicker({Name = "Friend Color", Color = _G.FriendColor, Callback = function(Value) _G.FriendColor = Value end})
 ESPTab:CreateColorPicker({Name = "Enemy Color", Color = _G.EnemyColor, Callback = function(Value) _G.EnemyColor = Value end})
 ESPTab:CreateToggle({Name = "Use Team Color", CurrentValue = _G.UseTeamColor, Callback = function(Value) _G.UseTeamColor = Value end})
 
--- ===== Khác Tab =====
 local OtherTab = Window:CreateTab("Khác", 4483362458)
 local InfiniteJumpEnabled = false
 OtherTab:CreateToggle({Name = "Infinity Jump", CurrentValue = false, Callback = function(Value) InfiniteJumpEnabled = Value end})
@@ -249,7 +179,6 @@ UserInputService.JumpRequest:Connect(function()
         LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
     end
 end)
-
 OtherTab:CreateSlider({Name = "Player Speed", Range = {16,200}, Increment = 5, CurrentValue = 16, Callback = function(Value)
     if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
         LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = Value
@@ -280,7 +209,6 @@ OtherTab:CreateToggle({Name = "Fly Gui", CurrentValue = false, Callback = functi
     end
 end})
 
--- ===== Orbit Behind =====
 local orbitEnabled = false
 local distanceBehind = 5
 local bodyPos
@@ -336,6 +264,5 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
--- ===== Init =====
 fovFrame.Visible = aimEnabled
 updateFOVVisual()
