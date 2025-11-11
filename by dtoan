@@ -21,19 +21,6 @@ local Window = Dtoan:CreateWindow({
     KeySettings = {Title = "Untitled", FileName = "Key", SaveKey = true, GrabKeyFromSite = false, Key = {"Hello"}}
 })
 
--- ===== Change the Script Tab (đặt đầu tiên) =====
-local ChangeTab = Window:CreateTab("Change the Script", 4483362458)
-local Toggle = ChangeTab:CreateToggle({
-    Name = "Aim bot",
-    CurrentValue = false,
-    Flag = "Toggle1",
-    Callback = function(Value)
-        if Value then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/duytoan429/vip/refs/heads/main/README.md"))()
-        end
-    end,
-})
-
 -- ===== Tabs Blox Fruit =====
 local BloxFruitTab = Window:CreateTab("Blox Fruit", 4483362458)
 BloxFruitTab:CreateButton({Name = "Speed Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))() end})
@@ -66,3 +53,15 @@ AddButton(BrainrotTab, {Name="Kurd hub", Callback=function() loadstring(game:Htt
 AddButton(BrainrotTab, {Name="Lemon hub", Callback=function() loadstring(game:HttpGet("https://pastefy.app/MJw2J4T6/raw"))() end})
 AddButton(BrainrotTab, {Name="Chilli hub", Callback=function() loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))() end})
 
+-- ===== Change the Script Tab (cuối cùng) =====
+local ChangeTab = Window:CreateTab("Change the Script", 4483362458)
+local Toggle = ChangeTab:CreateToggle({
+    Name = "Aim bot",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(Value)
+        if Value then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/duytoan429/vip/refs/heads/main/README.md"))()
+        end
+    end,
+})
