@@ -164,41 +164,22 @@ local function worldToViewportVec(pos)
     return Vector2.new(p.X, p.Y), onScreen, p.Z
 end
 
+-- ===== ESP Line (sửa, top screen) =====
 local function createLine()
     local line = Drawing.new("Line")
-    line.Visible=false
-    line.Thickness=2
-    line.Transparency=1
+    line.Thickness = 2
+    line.Visible = false
     return line
 end
 
 local function removeLine(player)
     if linesTable[player] then
-        linesTable[player].Visible=false
         linesTable[player]:Remove()
-        linesTable[player]=nil
+        linesTable[player] = nil
     end
 end
 
 Players.PlayerRemoving:Connect(removeLine)
-
-local function setupHumanoidListener(player)
-    if player.Character then
-        local humanoid = player.Character:FindFirstChild("Humanoid")
-        if humanoid then
-            humanoid.Died:Connect(function() removeLine(player) end)
-        end
-        player.CharacterAdded:Connect(function(char)
-            local hum = char:WaitForChild("Humanoid")
-            hum.Died:Connect(function() removeLine(player) end)
-        end)
-    end
-end
-
-for _,player in pairs(Players:GetPlayers()) do
-    if player~=LocalPlayer then setupHumanoidListener(player) end
-end
-Players.PlayerAdded:Connect(function(player) if player~=LocalPlayer then setupHumanoidListener(player) end end)
 
 RunService.RenderStepped:Connect(function()
     for player,data in pairs(espTable) do
@@ -237,23 +218,23 @@ RunService.RenderStepped:Connect(function()
         end
     end
 
-    if espBoxEnabled and espLineEnabled then
-        for _,player in pairs(Players:GetPlayers()) do
-            if player~=LocalPlayer and player.Character and player.Character:FindFirstChild("Head") then
-                if not linesTable[player] then linesTable[player] = createLine() end
-                local headPos, onScreen = Camera:WorldToViewportPoint(player.Character.Head.Position + Vector3.new(0,0.5,0))
-                if onScreen then
-                    linesTable[player].From = Vector2.new(Camera.ViewportSize.X/2, 50)
-                    linesTable[player].To = Vector2.new(headPos.X, headPos.Y)
-                    linesTable[player].Color = getTeamColor(player)
-                    linesTable[player].Visible = true
-                else
-                    linesTable[player].Visible = false
-                end
+    -- ESP Line
+    for _,player in pairs(Players:GetPlayers()) do
+        if espLineEnabled and player~=LocalPlayer and player.Character and player.Character:FindFirstChild("Head") then
+            if not linesTable[player] then linesTable[player] = createLine() end
+            local headPos, onScreen = Camera:WorldToViewportPoint(player.Character.Head.Position + Vector3.new(0,0.5,0))
+            if onScreen then
+                -- Bắt đầu từ top màn hình, y = 50
+                linesTable[player].From = Vector2.new(Camera.ViewportSize.X/2, 50)
+                linesTable[player].To = Vector2.new(headPos.X, headPos.Y)
+                linesTable[player].Color = getTeamColor(player)
+                linesTable[player].Visible = true
+            else
+                linesTable[player].Visible = false
             end
+        elseif linesTable[player] then
+            linesTable[player].Visible = false
         end
-    else
-        for _,line in pairs(linesTable) do line.Visible=false end
     end
 end)
 
