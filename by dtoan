@@ -36,7 +36,7 @@ BloxFruitTab:CreateButton({Name = "Tsuo hub", Callback = function() loadstring(g
 
 -- ===== Grow A Garden Tab =====
 local GrowGardenTab = Window:CreateTab("Grow A Garden", 4483362458)
-GrowGardenTab:CreateButton({Name = "Grow Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))() end})
+GrowGardenTab:CreateButton({Name = "Speed Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))() end})
 
 -- ===== 99 Night In The Forest Tab =====
 local ForestTab = Window:CreateTab("99 Night In The Forest", 4483362458)
