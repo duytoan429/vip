@@ -29,10 +29,10 @@ BloxFruitTab:CreateButton({Name = "Kiwi Hub", Callback = function() loadstring(g
 BloxFruitTab:CreateButton({Name = "Doraemon Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Zee Hub", Callback = function() loadstring(game:HttpGet("https://zuwz.me/Ls-Zee-Hub"))() end})
 BloxFruitTab:CreateButton({Name = "Đạt Thg", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/DatThg/refs/heads/main/DatThgV2"))() end})
-BloxFruitTab:CreateButton({Name = "Maru Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/trongdeptraihucscript/MaruHubPremium/refs/heads/main/MaruHubPremium.lua"))() end})
 BloxFruitTab:CreateButton({Name = "W Azure", Callback = function() loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/85e904ae1ff30824c1aa007fc7324f8f.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Quantum Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Astral Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Overgustx2/Main/refs/heads/main/BloxFruits_25.html"))() end})
+BloxFruitTab:CreateButton({Name = "Tsuo hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts"))() end})
 
 -- ===== Grow A Garden Tab =====
 local GrowGardenTab = Window:CreateTab("Grow A Garden", 4483362458)
