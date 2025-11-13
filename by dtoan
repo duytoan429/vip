@@ -68,6 +68,10 @@ BananaTab:CreateButton({Name = "Banana main", Callback = function() repeat wait(
 getgenv().Key = "ec1d1b42f3d34269beecb935" 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaHub.lua"))() end})
 
+BananaTab:CreateButton({Name = "Kaitun 99 night", Callback = function() repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+getgenv().Key = "ec1d1b42f3d34269beecb935"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/refs/heads/main/Kaitun-99night.lua"))() end})
+
     BananaTab:CreateButton({Name = "Banana Pvp", Callback = function()
         repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
         getgenv().Key = "ec1d1b42f3d34269beecb935"
