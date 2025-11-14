@@ -31,6 +31,7 @@ BloxFruitTab:CreateButton({Name = "Astral Hub", Callback = function() loadstring
 BloxFruitTab:CreateButton({Name = "Tsuo hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts"))() end})
 BloxFruitTab:CreateButton({Name = "Gravity hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))() end})
 BloxFruitTab:CreateButton({Name = "BlueX hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-BlueX/BlueX-Hub/refs/heads/main/Main.lua"))() end})
+BloxFruitTab:CreateButton({Name = "Lemon hub", Callback = function() loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fda9babd071d6b536a745774b6bc681c.lua"))() end})
 
 -- ===== Grow A Garden Tab =====
 local GrowGardenTab = Window:CreateTab("Grow A Garden", 4483362458)
