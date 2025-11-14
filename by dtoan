@@ -37,7 +37,7 @@ GrowGardenTab:CreateButton({Name = "Speed Hub", Callback = function() loadstring
 
 -- ===== 99 Night In The Forest Tab =====
 local ForestTab = Window:CreateTab("99 Night In The Forest", 4483362458)
-ForestTab:CreateButton({Name = "Forest Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/duytoan429/ForestHub/main/99Night.lua"))() end})
+ForestTab:CreateButton({Name = "TDT Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/DuyThinhNek12/Script/refs/heads/main/TDT99Night.lua.txt"))() end})
 
 -- ===== Crossover Tab =====
 local CrossoverTab = Window:CreateTab("Crossover", 4483362458)
