@@ -24,6 +24,16 @@ BloxFruitTab:CreateButton({Name = "Teddy Hub", Callback = function() repeat task
 BloxFruitTab:CreateButton({Name = "Kiwi Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/HieuDepTrai-Z/KiwiHubFree/refs/heads/main/KiwiHub.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Doraemon Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Zee Hub", Callback = function() loadstring(game:HttpGet("https://zuwz.me/Ls-Zee-Hub"))() end})
+BloxFruitTab:CreateButton({Name = "Xeter hub", Callback = function() getgenv().Version = "V3"
+getgenv().Team = "Marines"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TlDinhKhoi/Xeter/refs/heads/main/Main.lua"))() end})
+BloxFruitTab:CreateButton({Name = "Zinner hub", Callback = function() getgenv().Team = "Pirates"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/HoangNguyenk8/Roblox/refs/heads/main/BF-Main.luau"))() end})
+BloxFruitTab:CreateButton({Name = "Hiru hub", Callback = function() getgenv().Settings = {
+    JoinTeam = true,
+    Team = "Marines"
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kiddohiru/Source/main/BloxFruits.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Đạt Thg", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/DatThg/refs/heads/main/DatThgV2"))() end})
 BloxFruitTab:CreateButton({Name = "W Azure", Callback = function() loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/85e904ae1ff30824c1aa007fc7324f8f.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Quantum Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))() end})
