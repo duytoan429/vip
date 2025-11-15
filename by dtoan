@@ -164,6 +164,79 @@ else
     OpenBananaPremium()
 end
 
+-- ===== Maru Premium Tab =====
+local MaruTab = Window:CreateTab("Maru Premium", 4483362458)
+local MaruKey = "MaruVIP123"
+local MaruKeyFile = "DtoanHub_MaruKey.txt"
+local MaruAccess = false
+
+if isfile and isfile(MaruKeyFile) then
+    local saved = readfile(MaruKeyFile)
+    if saved == MaruKey then MaruAccess = true end
+end
+
+local function OpenMaruPremium()
+    MaruTab:CreateButton({Name = "Maru Main", Callback = function()
+        getgenv().Key = "MARU-EBEN-11ZMM-S3LQ-HP14S-WK08"
+getgenv().id = "1106476716475551755"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))() end})
+end
+
+if not MaruAccess then
+    local ScreenGui = Instance.new("ScreenGui", LocalPlayer.PlayerGui)
+    ScreenGui.Name = "MaruKeyGui"
+    local Frame = Instance.new("Frame", ScreenGui)
+    Frame.AnchorPoint = Vector2.new(0.5,0.5)
+    Frame.Position = UDim2.new(0.5,0,0.5,0)
+    Frame.Size = UDim2.new(0,300,0,180)
+    Frame.BackgroundColor3 = Color3.fromRGB(255,255,255)
+    Frame.BorderSizePixel = 2
+    Frame.BorderColor3 = Color3.fromRGB(0,0,0)
+    Frame.Active = true
+    Frame.Draggable = true
+
+    local Title = Instance.new("TextLabel", Frame)
+    Title.Text = "Nhập Key Maru Premium"
+    Title.Size = UDim2.new(1,0,0,40)
+    Title.Font = Enum.Font.GothamBold
+    Title.TextSize = 18
+    Title.BackgroundTransparency = 1
+    Title.TextColor3 = Color3.fromRGB(0,0,0)
+
+    local Input = Instance.new("TextBox", Frame)
+    Input.PlaceholderText = ""
+    Input.Size = UDim2.new(0.9,0,0,35)
+    Input.Position = UDim2.new(0.05,0,0.4,0)
+    Input.BackgroundColor3 = Color3.fromRGB(245,245,245)
+    Input.TextColor3 = Color3.fromRGB(0,0,0)
+    Input.TextSize = 16
+    Input.Font = Enum.Font.SourceSans
+
+    local Confirm = Instance.new("TextButton", Frame)
+    Confirm.Text = "Xác nhận"
+    Confirm.Size = UDim2.new(0.9,0,0,35)
+    Confirm.Position = UDim2.new(0.05,0,0.7,0)
+    Confirm.BackgroundColor3 = Color3.fromRGB(0,170,255)
+    Confirm.TextColor3 = Color3.fromRGB(255,255,255)
+    Confirm.Font = Enum.Font.GothamBold
+    Confirm.TextSize = 16
+
+    Confirm.MouseButton1Click:Connect(function()
+        if Input.Text == MaruKey then
+            if writefile then writefile(MaruKeyFile,MaruKey) end
+            ScreenGui:Destroy()
+            MaruAccess = true
+            OpenMaruPremium()
+            Dtoan:Notify("✅ Key hợp lệ! Đã mở khóa Maru Premium.")
+        else
+            Dtoan:Notify("❌ Key sai! Vui lòng thử lại.")
+        end
+    end)
+else
+    OpenMaruPremium()
+end
+
+
 -- ===== Change the Script Tab =====
 local ChangeTab = Window:CreateTab("Change the Script", 4483362458)
 ChangeTab:CreateToggle({
