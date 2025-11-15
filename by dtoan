@@ -22,8 +22,6 @@ local BloxFruitTab = Window:CreateTab("Blox Fruit", 4483362458)
 BloxFruitTab:CreateButton({Name = "Speed Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Teddy Hub", Callback = function() repeat task.wait() until game:IsLoaded() and game.Players.LocalPlayer:FindFirstChild("PlayerGui") loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TEDDYHUB-FREEMIUM"))() end})
 BloxFruitTab:CreateButton({Name = "Kiwi Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/HieuDepTrai-Z/KiwiHubFree/refs/heads/main/KiwiHub.lua"))() end})
-BloxFruitTab:CreateButton({Name = "Ngọc Bổng", Callback = function() getgenv().Team = "Marines"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/NgocBong/refs/heads/main/NgocBongVn"))()end})
 BloxFruitTab:CreateButton({Name = "Doraemon Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Zee Hub", Callback = function() loadstring(game:HttpGet("https://zuwz.me/Ls-Zee-Hub"))() end})
 BloxFruitTab:CreateButton({Name = "Đạt Thg", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/DatThg/refs/heads/main/DatThgV2"))() end})
