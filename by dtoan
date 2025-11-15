@@ -237,7 +237,6 @@ else
     OpenMaruPremium()
 end
 
-
 -- ===== Change the Script Tab =====
 local ChangeTab = Window:CreateTab("Change the Script", 4483362458)
 ChangeTab:CreateToggle({
