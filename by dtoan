@@ -53,6 +53,7 @@ GrowGardenTab:CreateButton({Name = "Speed Hub", Callback = function() loadstring
 -- ===== 99 Night In The Forest Tab =====
 local ForestTab = Window:CreateTab("99 Night In The Forest", 4483362458)
 ForestTab:CreateButton({Name = "Cps hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Rx1m/CpsHub/refs/heads/main/Hub",true))() end})
+ForestTab:CreateButton({Name = "Ringta hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wehibuyfgyuwe/99nights.github.io/refs/heads/main/ringta.lua"))() end})
 ForestTab:CreateButton({Name = "TDT Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/DuyThinhNek12/Script/refs/heads/main/TDT99Night.lua.txt"))() end})
 ForestTab:CreateButton({Name = "Lonely hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/LongHip12/LonelyHub/refs/heads/main/LonelyHub-99NITF.lua"))() end})
 ForestTab:CreateButton({Name = "Gec", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GEC0/gec/refs/heads/main/Gec.Loader", true))() end})
