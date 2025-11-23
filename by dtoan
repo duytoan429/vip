@@ -57,6 +57,7 @@ ForestTab:CreateButton({Name = "Ringta hub", Callback = function() loadstring(ga
 ForestTab:CreateButton({Name = "TDT Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/DuyThinhNek12/Script/refs/heads/main/TDT99Night.lua.txt"))() end})
 ForestTab:CreateButton({Name = "Lonely hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/LongHip12/LonelyHub/refs/heads/main/LonelyHub-99NITF.lua"))() end})
 ForestTab:CreateButton({Name = "Gec", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GEC0/gec/refs/heads/main/Gec.Loader", true))() end})
+ForestTab:CreateButton({Name = "Auto Farm Diamond", Callback = function() loadstring(game:HttpGet('https://raw.githubusercontent.com/MQPS7/99-Night-in-the-Forset/refs/heads/main/Gfarm'))() end})
 
 -- ===== Crossover Tab =====
 local CrossoverTab = Window:CreateTab("Crossover", 4483362458)
