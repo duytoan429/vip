@@ -20,6 +20,7 @@ local Window = Dtoan:CreateWindow({
 -- ===== Tabs Blox Fruit =====
 local BloxFruitTab = Window:CreateTab("Blox Fruit", 4483362458)
 BloxFruitTab:CreateButton({Name = "Speed Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))() end})
+BloxFruitTab:CreateButton({Name = "Pvp", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadozCode/CentuDox-Hub-Paradoz-Hub/refs/heads/main/CentudoxLoader.xyz", true))() end})
 BloxFruitTab:CreateButton({Name = "Teddy Hub", Callback = function() repeat task.wait() until game:IsLoaded() and game.Players.LocalPlayer:FindFirstChild("PlayerGui") loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TEDDYHUB-FREEMIUM"))() end})
 BloxFruitTab:CreateButton({Name = "Kiwi Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/HieuDepTrai-Z/KiwiHubFree/refs/heads/main/KiwiHub.lua"))() end})
 BloxFruitTab:CreateButton({Name = "Doraemon Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua"))() end})
